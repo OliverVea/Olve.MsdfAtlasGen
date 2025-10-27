@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Olve.MsdfAtlasGen</PackageId>
+        <Title>MSDF Atlas Generator for .NET</Title>
+        <Description>
+            C# wrapper for msdf-atlas-gen with cross-platform native binaries included.
+            Generates multi-channel signed distance field font atlases from TTF/OTF files.
+        </Description>
+        <Authors>Olve (Your Full Name)</Authors>
+        <PackageTags>msdf;sdf;font;atlas;distance-field;text-rendering;opengl</PackageTags>
+        <PackageProjectUrl>https://github.com/yourname/olve-msdfatlasgen</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/yourname/olve-msdfatlasgen</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="runtimes/win-x64/native/*">
+            <PackagePath>runtimes/win-x64/native</PackagePath>
+            <Pack>true</Pack>
+        </Content>
+        <Content Include="runtimes/linux-x64/native/*">
+            <PackagePath>runtimes/linux-x64/native</PackagePath>
+            <Pack>true</Pack>
+        </Content>
+        <Content Include="runtimes/osx-x64/native/*">
+            <PackagePath>runtimes/osx-x64/native</PackagePath>
+            <Pack>true</Pack>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Text.Json" Version="9.0.10" />
+    </ItemGroup>
+</Project>
