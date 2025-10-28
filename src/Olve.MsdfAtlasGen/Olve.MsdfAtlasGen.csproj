@@ -8,13 +8,13 @@
 
         <!-- NuGet Package Metadata -->
         <PackageId>Olve.MsdfAtlasGen</PackageId>
-        <Version>1.0.0</Version>
-        <Authors>Olve</Authors>
-        <Company>Olve</Company>
+        <Version>1.0.1</Version>
+        <Authors>OliverVea</Authors>
+        <Company>OliverVea</Company>
         <Description>C# wrapper for msdf-atlas-gen with cross-platform native binaries included. Generates multi-channel signed distance field font atlases from TTF/OTF files.</Description>
         <PackageTags>msdf;sdf;font;atlas;distance-field;text-rendering;opengl;game-dev</PackageTags>
-        <PackageProjectUrl>https://github.com/yourusername/olve-msdfatlasgen</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/yourusername/olve-msdfatlasgen</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/OliverVea/Olve.MsdfAtlasGen</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/OliverVea/Olve.MsdfAtlasGen</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
