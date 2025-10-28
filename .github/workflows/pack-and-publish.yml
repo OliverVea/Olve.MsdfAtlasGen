@@ -25,8 +25,7 @@ jobs:
       - name: Pack NuGet package
         run: dotnet pack src/Olve.MsdfAtlasGen/Olve.MsdfAtlasGen.csproj -c Release
 
-      - name: Push to NuGet (on release)
-        if: github.event_name == 'release'
+      - name: Push to NuGet
         run: |
           dotnet nuget push src/Olve.MsdfAtlasGen/bin/Release/Olve.MsdfAtlasGen.*.nupkg \
             --api-key ${{ secrets.NUGET_API_KEY }} \
