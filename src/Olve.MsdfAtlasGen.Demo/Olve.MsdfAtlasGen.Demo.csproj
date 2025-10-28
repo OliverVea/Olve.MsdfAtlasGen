@@ -12,6 +12,10 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <Link>Roboto-Regular.ttf</Link>
       </None>
+      <None Update="resources\OFL.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <Link>OFL.txt</Link>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
