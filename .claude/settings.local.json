@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s /b)",
+      "Bash(mkdir:*)",
+      "Bash(dotnet build:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(wsl bash -c \"cd /mnt/c/Users/olive/RiderProjects/Olve.MsdfAtlasGen/build/msdf-atlas-gen && pwd && ls -la\")",
+      "Bash(wsl bash:*)",
+      "Bash(dotnet run:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

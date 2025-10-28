@@ -1,0 +1,39 @@
+name: Pack and Publish NuGet
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [ created ]
+  workflow_dispatch:
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Pack NuGet package
+        run: dotnet pack src/Olve.MsdfAtlasGen/Olve.MsdfAtlasGen.csproj -c Release
+
+      - name: Push to NuGet (on release)
+        if: github.event_name == 'release'
+        run: |
+          dotnet nuget push src/Olve.MsdfAtlasGen/bin/Release/Olve.MsdfAtlasGen.*.nupkg \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --source https://api.nuget.org/v3/index.json
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-package
+          path: src/Olve.MsdfAtlasGen/bin/Release/*.nupkg

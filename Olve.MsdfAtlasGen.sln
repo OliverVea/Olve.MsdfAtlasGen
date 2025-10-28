@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repo", "repo", "{E9C1CF1E-0
 		TASK.md = TASK.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olve.MsdfAtlasGen.Demo", "src\Olve.MsdfAtlasGen.Demo\Olve.MsdfAtlasGen.Demo.csproj", "{5F93A456-F1A0-4023-BCF3-DAB099165952}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{923DF597-EBB4-445F-A8E4-639070AAB800}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{923DF597-EBB4-445F-A8E4-639070AAB800}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{923DF597-EBB4-445F-A8E4-639070AAB800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F93A456-F1A0-4023-BCF3-DAB099165952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F93A456-F1A0-4023-BCF3-DAB099165952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F93A456-F1A0-4023-BCF3-DAB099165952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F93A456-F1A0-4023-BCF3-DAB099165952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

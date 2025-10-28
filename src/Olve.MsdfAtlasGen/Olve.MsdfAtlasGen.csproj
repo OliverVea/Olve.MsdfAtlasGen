@@ -1,42 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
-    </PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
 
-    <PropertyGroup>
+        <!-- NuGet Package Metadata -->
         <PackageId>Olve.MsdfAtlasGen</PackageId>
-        <Title>MSDF Atlas Generator for .NET</Title>
-        <Description>
-            C# wrapper for msdf-atlas-gen with cross-platform native binaries included.
-            Generates multi-channel signed distance field font atlases from TTF/OTF files.
-        </Description>
-        <Authors>Olve (Your Full Name)</Authors>
-        <PackageTags>msdf;sdf;font;atlas;distance-field;text-rendering;opengl</PackageTags>
-        <PackageProjectUrl>https://github.com/yourname/olve-msdfatlasgen</PackageProjectUrl>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/yourname/olve-msdfatlasgen</RepositoryUrl>
+        <Version>1.0.0</Version>
+        <Authors>Olve</Authors>
+        <Company>Olve</Company>
+        <Description>C# wrapper for msdf-atlas-gen with cross-platform native binaries included. Generates multi-channel signed distance field font atlases from TTF/OTF files.</Description>
+        <PackageTags>msdf;sdf;font;atlas;distance-field;text-rendering;opengl;game-dev</PackageTags>
+        <PackageProjectUrl>https://github.com/yourusername/olve-msdfatlasgen</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/yourusername/olve-msdfatlasgen</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
+    <!-- Include README in package -->
     <ItemGroup>
-        <Content Include="runtimes/win-x64/native/*">
-            <PackagePath>runtimes/win-x64/native</PackagePath>
+        <None Include="../../README.md" Pack="true" PackagePath="/" />
+    </ItemGroup>
+
+    <!-- Include native binaries for all platforms -->
+    <ItemGroup>
+        <Content Include="runtimes/win-x64/native/msdf-atlas-gen.exe">
+            <PackagePath>runtimes/win-x64/native/</PackagePath>
             <Pack>true</Pack>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Include="runtimes/linux-x64/native/*">
-            <PackagePath>runtimes/linux-x64/native</PackagePath>
+        <Content Include="runtimes/linux-x64/native/msdf-atlas-gen">
+            <PackagePath>runtimes/linux-x64/native/</PackagePath>
             <Pack>true</Pack>
-        </Content>
-        <Content Include="runtimes/osx-x64/native/*">
-            <PackagePath>runtimes/osx-x64/native</PackagePath>
-            <Pack>true</Pack>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
+    <!-- Dependencies -->
     <ItemGroup>
-        <PackageReference Include="System.Text.Json" Version="9.0.10" />
+        <PackageReference Include="System.Text.Json" Version="8.0.5" />
     </ItemGroup>
 </Project>
