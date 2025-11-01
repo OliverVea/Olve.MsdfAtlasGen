@@ -1,0 +1,17 @@
+<Project>
+  <ItemGroup>
+    <!-- Copy Windows native binary to output directory with correct structure -->
+    <None Include="$(MSBuildThisFileDirectory)..\runtimes\win-x64\native\msdf-atlas-gen.exe" Condition="'$(RuntimeIdentifier)' == 'win-x64' OR '$(RuntimeIdentifier)' == ''">
+      <Link>runtimes\win-x64\native\msdf-atlas-gen.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+
+    <!-- Copy Linux native binary to output directory with correct structure -->
+    <None Include="$(MSBuildThisFileDirectory)..\runtimes\linux-x64\native\msdf-atlas-gen" Condition="'$(RuntimeIdentifier)' == 'linux-x64' OR '$(RuntimeIdentifier)' == ''">
+      <Link>runtimes\linux-x64\native\msdf-atlas-gen</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+</Project>
